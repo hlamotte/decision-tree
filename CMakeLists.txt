@@ -12,13 +12,11 @@ enable_testing()
 add_subdirectory(googletest)
 
 set(Headers
-    DecisionTree.hpp
-    NodeUtility.hpp
-    Utilities.hpp
+    Node.hpp
 )
 
 set(Source
-    Example.cpp
+    Node.cpp
 )
 
 add_library(${ProjectName} STATIC ${Source} ${Headers})

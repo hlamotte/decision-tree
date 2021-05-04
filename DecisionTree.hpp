@@ -1,35 +1,42 @@
 #ifndef DECISIONTREE_HPP
 #define DECISIONTREE_HPP
 
-#include <iostream>
-#include "NodeUtility.hpp"
+#include "CSVReader.hpp"
+#include "TreeNode.hpp"
 
-class TreeNode
+
+// instantiate the node in the heap, then don't need to explicitly allocate member
+// variables memory in the heap
+class DecisionTree
 {
     // Access specifier
     public:
-  
-    // Data Members
-    TreeNode* ChildLeft = NULL;
-    TreeNode* ChildRight = NULL;
-    int SplitFeature;
-    int SplitCategory;
-    float GiniGain;
-  
-    // Number of children nodes
+        //at some point need to make private and expose using getters and setters
+        TreeNode* rootNodeP;
+        obsArray trainingData;
+
+        DecisionTree(char* trainPath, char* testPath);
+
+        ~DecisionTree();
+
+        DecisionTree* DeepCopy() {
+            // READ ABOUT DEEP AND SHALLOW COPIES
+
+            // copy stuff
+            return this;
+        }
+
+        DecisionTree* ShallowCopy() {
+            // READ ABOUT DEEP AND SHALLOW COPIES
+
+            // copy stuff
+            return this;
+        }
+        
     
+        // Traverse tree
+        void traverseTree() const;
 };
 
-void ChildrenNumber(TreeNode* node)
-{
-    // return if both null
-    if (node == NULL)
-        return;
-
-    ChildrenNumber(node->ChildLeft);
-    ChildrenNumber(node->ChildRight);
-    
-    std::cout << node->GiniGain << '\n';
-}
 
 #endif /* DECISIONTREE_HPP */

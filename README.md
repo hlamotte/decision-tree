@@ -30,11 +30,24 @@ In this repo basic categorical-only decision tree classifier algorithm is implem
 - Split the data based on that feature to create two new sub-trees.
 - Repeat splitting of nodes in each sub-tree until only one outcome class predicted after splitting (gini gain = 0).
 
+## Inputs and outputs
+### Inputs
+To simplify the problem to the core business logic of a categorical decision tree classifier, we will assume that all categories all encoded as integers then input to the decision tree as a train csv and a test csv. The header (feature names) will be omitted from the input and each *row* will contain all the observations for a feature, a column will represent one individual observation. Note this is rotated 90 degrees from a traditional csv representation.
+
+Assume training data features contain at least one instance of every class that can exist and that classes are indexed from zero.
+
+The last row will be assumed to be the predictions.
+
+### Outputs
+Prints the predicted classes of the test set to the terminal.
+
 ## Required data structures
 ### Training and test data structure
+
+
 An array of pointers for all features these pointers point to arrays with the value of that feature for each training or test observation. 
 
-An array of outcome classes for each training observation.
+An array of outcome classes for each training and test observation.
 
 ### Decision tree architecture structure
 Tree architecture.
@@ -45,6 +58,33 @@ Each node has following attributes:
 3. SplitFeature - feature used at split
 4. SplitCategory - category of that feature used at split. Observations containing that category are passed to the right child tree. If leaf, predicted class.
 5. GiniGain - gain as a result of split.
+
+## UML
+*Tree class*
+- Tree()
+- ~Tree()
+- Node* head
+- Traverse()
+- Fit()
+- Transform()
+- CSVReader
+
+Stretch nice to haves:
+- Load()
+- Save()
+- Look into Hdf5 format for saving
+
+*Node class*
+- Node()
+- ~Node()
+- Node* children
+- DataFrame data
+- int splitFeature
+- int splitCategory
+- float giniImpurity
+
+
+
 
 ### Gini gain
 Gini impurity is the probability of incorrectly classifying a randomly chosen element in the dataset if it were randomly labeled *according to the class distribution* in the dataset.
