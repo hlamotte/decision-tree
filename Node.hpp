@@ -7,6 +7,12 @@
 // create an alias for the data structure we are going to use to store observations
 using DataFrame = std::vector<std::vector<int>>;
 
+struct bestSplitReturn
+{
+    float resultantGini;
+    int feature;
+    int category;
+};
 
 // instantiate the node in the heap, then don't need to explicitly allocate member
 // variables memory in the heap
@@ -18,12 +24,10 @@ class Node
         Node* childLeftP;
         Node* childRightP;
         DataFrame trainingData;
-        int splitFeature; // column index of split feature
-        int splitCategory; // category of split to left child
-        float giniImpurity;
+        bestSplitReturn bestSplit; // column index of split feature
 
 
-        Node(DataFrame* nodeDataP);
+        Node(const DataFrame& data);
 
         ~Node();
 
@@ -40,8 +44,9 @@ class Node
             // copy stuff
             return this;
         }
-        static float calcGiniImpurity(DataFrame* dataP, int feature);
-        
+        static float getGiniImpurity(const std::vector<int>& outcomes);
+        static DataFrame getSplitTargets(const DataFrame& dataP, int feature, int category);
+        static bestSplitReturn getBestSplit(const DataFrame& dataP); //don't pass by reference
     
 
 };

@@ -36,7 +36,7 @@ To simplify the problem to the core business logic of a categorical decision tre
 
 Assume training data features contain at least one instance of every class that can exist and that classes are indexed from zero.
 
-The last row will be assumed to be the predictions.
+The last row will be assumed to be the outcomes/target variable.
 
 ### Outputs
 Prints the predicted classes of the test set to the terminal.
