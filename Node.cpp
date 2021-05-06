@@ -4,6 +4,7 @@
 #include <typeinfo>
 
 // sum of the elements of an integer array
+/*
 inline int sumIntArray(int ElementNum, int* Array) {
     int sum = 0;
     for (int i = 0; i < ElementNum; i++) {
@@ -11,10 +12,12 @@ inline int sumIntArray(int ElementNum, int* Array) {
     }
     return sum;
 };
+*/
 
 // for a feature calculate the gini impurity
 // NEED TO MAKE CONST
 // calculate gini impurity on an obsArray, current interface does not make sense
+/*
 float giniImpurityOld(const int& NumberTargetCats, int* NumberEachCat) {
     int TotalSamples = sumIntArray(NumberTargetCats, NumberEachCat);
     float GiniSum = 0.0;
@@ -27,6 +30,7 @@ float giniImpurityOld(const int& NumberTargetCats, int* NumberEachCat) {
     }
     return GiniSum;
 };
+*/
 /*
 // calculate Gini impurity for a feature
 float Node::calcGiniImpurity(DataFrame* dataP, int feature) {
