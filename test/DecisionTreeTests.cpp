@@ -66,6 +66,7 @@ TEST(DecisionTreeTests, DecisionTree) {
     delete bigTreeP;
     //EXPECT_EQ(testTree.rootP->bestSplit.feature, 1);
     //std::cout << testTree.rootP->trainingData[0][0];
+    //another comment
 
 
     //EXPECT_EQ(1, 2);
