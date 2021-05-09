@@ -242,14 +242,19 @@ bestSplitReturn Node::getBestSplit(const DataFrame& dataP) {
 Node::Node(const DataFrame& data) {
     // constructor
 
-    //std::cout << "Created tree node" << '\n';
+    
 
     // initialize pointers to children as null
     this->childLeftP = NULL;
     this->childRightP = NULL;
+    const std::vector<int> outputsBefore = data[data.size() - 1];
+    this->trainingData = data;
+    //this->giniBefore = Node::getGiniImpurity(outputsBefore);
 
     // calculate best feature to split on
     this->bestSplit = Node::getBestSplit(data);
+
+    //std::cout << "Created tree node" << '\n';
 
     //this->calcGiniImpurity(nodeDataP, 0);
 }

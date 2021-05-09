@@ -1,11 +1,11 @@
+#include <stdexcept>
+
 #include "CSVReader.hpp"
 
-
-
-obsArray CSVReader::read(char* filePath) {
+DataFrame CSVReader::read(std::string filePath) {
 
     std::string line;                    /* string to hold each line */
-    obsArray array;      /* vector of vector<int> for 2d array */
+    DataFrame array;      /* vector of vector<int> for 2d array */
 
     //if (argc < 2) { /* validate at least 1 argument given */
     //    cerr << "error: insufficient input.\n"
@@ -20,7 +20,7 @@ obsArray CSVReader::read(char* filePath) {
             throw (filePath);
         };
     } catch (char* filePath) {
-        std::cout << (("error while opening file " + std::string(filePath)).c_str());
+        throw std::invalid_argument(("error while opening file " + std::string(filePath)).c_str());
     }
 
     while (getline (f, line)) {         /* read each line */
@@ -33,11 +33,13 @@ obsArray CSVReader::read(char* filePath) {
     }
     f.close();
 
+    /*
     std::cout << "complete array\n\n";
-    for (auto& row : array) {           /* iterate over rows */
-        for (auto& val : row)           /* iterate over vals */
-            std::cout << val << "  ";        /* output value      */
-        std::cout << "\n";                   /* tidy up with '\n' */
+    for (auto& row : array) {           
+        for (auto& val : row)           
+            std::cout << val << "  ";   
+        std::cout << "\n";              
     }
+    */
     return array;
 }

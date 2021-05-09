@@ -13,10 +13,14 @@ add_subdirectory(googletest)
 
 set(Headers
     Node.hpp
+    CSVReader.hpp
+    DecisionTree.hpp
 )
 
 set(Source
     Node.cpp
+    CSVReader.cpp
+    DecisionTree.cpp
 )
 
 add_library(${ProjectName} STATIC ${Source} ${Headers})

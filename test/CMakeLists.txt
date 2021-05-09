@@ -4,6 +4,8 @@ set(ProjectName DecisionTests)
 
 set(Sources
     NodeTests.cpp
+    CSVReaderTests.cpp
+    DecisionTreeTests.cpp
 )
 
 add_executable(${ProjectName} ${Sources})

@@ -84,8 +84,6 @@ Stretch nice to haves:
 - float giniImpurity
 
 
-
-
 ### Gini gain
 Gini impurity is the probability of incorrectly classifying a randomly chosen element in the dataset if it were randomly labeled *according to the class distribution* in the dataset.
 

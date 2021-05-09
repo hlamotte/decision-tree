@@ -25,9 +25,10 @@ class Node
         Node* childRightP;
         DataFrame trainingData;
         bestSplitReturn bestSplit; // column index of split feature
+        //float giniBefore;
 
 
-        Node(const DataFrame& data);
+        Node(const DataFrame& data); //constructor
 
         ~Node();
 
