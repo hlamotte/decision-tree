@@ -62,6 +62,7 @@ TEST(DecisionTreeTests, DecisionTree) {
 
     std::vector<int> bigPredictions = testTreeP->predict("../../test/resources/bigTest.csv");
     EXPECT_EQ(bigPredictions[1], 1);
+    //stack overflow?
 
     delete bigTreeP;
     //EXPECT_EQ(testTree.rootP->bestSplit.feature, 1);
