@@ -39,6 +39,7 @@ TEST(DecisionTreeTests, DecisionTree) {
     EXPECT_EQ(testSplit3.pres[0].size(), 5);
     EXPECT_EQ(testSplit3.abs[0].size(), 0);
 
+
     DecisionTree* testTreeP = new DecisionTree("../../test/resources/train.csv");
 
     std::vector<int> testObs{0, 2, 0};
@@ -58,9 +59,10 @@ TEST(DecisionTreeTests, DecisionTree) {
 
     delete testTreeP; // delete from heap
 
+
     DecisionTree* bigTreeP = new DecisionTree("../../test/resources/bigTrain.csv");
 
-    std::vector<int> bigPredictions = testTreeP->predict("../../test/resources/bigTest.csv");
+    std::vector<int> bigPredictions = bigTreeP->predict("../../test/resources/bigTest.csv");
     EXPECT_EQ(bigPredictions[1], 1);
     //stack overflow?
 
