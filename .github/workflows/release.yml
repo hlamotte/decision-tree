@@ -6,10 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
     - name: setup CMake
       run: mkdir build && /usr/local/bin/cmake --build ./build --config Debug --target all -j 6 --
-        #&& cd build && cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_FLAGS="-Werror" ..
-    #- name: make
-    #  run: cd build && make
-    #- name: Run Test
-    #  run: /home/runner/work/github_actions_gtest_example/github_actions_gtest_example/build/test/github_actions_gtest_example.test
