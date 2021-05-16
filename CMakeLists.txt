@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.20)
 
-set(ProjectName Example)
+set(ProjectName DecisionTree)
 
 project(${ProjectName} CXX)
 
@@ -21,8 +21,9 @@ set(Source
     Node.cpp
     CSVReader.cpp
     DecisionTree.cpp
+    Main.cpp
 )
 
-add_library(${ProjectName} STATIC ${Source} ${Headers})
+add_library(${ProjectName} SHARED ${Source} ${Headers})
 
 add_subdirectory(test)

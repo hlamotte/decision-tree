@@ -64,9 +64,24 @@ TEST(DecisionTreeTests, DecisionTree) {
 
     std::vector<int> bigPredictions = bigTreeP->predict("../../test/resources/bigTest.csv");
     EXPECT_EQ(bigPredictions[1], 1);
-    //stack overflow?
+    EXPECT_EQ(bigPredictions[10], 1);
+
 
     delete bigTreeP;
+    
+    // minus one in training set problematic
+    DecisionTree* titanicTreeP = new DecisionTree("../../test/resources/titanicTrain.csv");
+
+    std::vector<int> titanicPredictions = titanicTreeP->predict("../../test/resources/titanicTest.csv");
+    //std::cout << '\n' << "titanic predictions, size = " << titanicPredictions.size() << '\n';
+    //for (int prediction : titanicPredictions) {
+    //    std::cout << prediction << ",";
+    //}
+    //EXPECT_EQ(bigPredictions[10], 1);
+
+
+    delete titanicTreeP;
+
     //EXPECT_EQ(testTree.rootP->bestSplit.feature, 1);
     //std::cout << testTree.rootP->trainingData[0][0];
     //another comment
