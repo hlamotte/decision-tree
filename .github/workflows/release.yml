@@ -9,4 +9,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: setup CMake
-      run: mkdir build && /usr/local/bin/cmake --build ./build --config Debug --target all -j 6 --
+      run: mkdir build && /usr/local/bin/cmake --build ./build
