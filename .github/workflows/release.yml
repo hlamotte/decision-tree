@@ -13,4 +13,4 @@ jobs:
     - name: setup CMake
       run: mkdir build &&  /usr/local/bin/cmake . -B ./build/
     - name: run tests
-      run: ./build/test/DecisionTests
+      run: cd build && cd test && ls && ./DecisionTests
