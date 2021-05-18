@@ -10,7 +10,12 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: 'true'
+    - name: install compiler
+      - run:   |
+         sudo apt update
+         sudo apt install gcc-10 g++-10
+        shell: bash
     - name: setup CMake
-      run: mkdir build &&  /usr/local/bin/cmake -S . -B ./build/
+      run: mkdir build &&  /usr/local/bin/cmake -S . -B ./build/ -D CMAKE_CXX_COMPILER=/Library/Developer/CommandLineTools/usr/bin/g++
     - name: run tests
       run: cd build && make && cd test && ./DecisionTests
