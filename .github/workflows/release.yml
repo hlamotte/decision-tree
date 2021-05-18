@@ -11,6 +11,6 @@ jobs:
       with:
         submodules: 'true'
     - name: setup CMake
-      run: mkdir build &&  /usr/local/bin/cmake . -B ./build/
+      run: mkdir build &&  /usr/local/bin/cmake -S . -B ./build/
     - name: run tests
-      run: cd build && cd test && ls && ./DecisionTests
+      run: cd build && make && cd test && ./DecisionTests
