@@ -8,8 +8,6 @@ set(Sources
     DecisionTreeTests.cpp
 )
 
-add_compile_options(-O3 -Wall)
-
 add_executable(${ProjectName} ${Sources})
 
 target_link_libraries(${ProjectName} PUBLIC

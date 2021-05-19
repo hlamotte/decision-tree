@@ -7,6 +7,8 @@ project(${ProjectName} CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+add_compile_options(-O3 -Wall)
+
 enable_testing()
 
 add_subdirectory(googletest)
