@@ -87,7 +87,7 @@ float Node::getGiniImpurity(const std::vector<int>& outcomes) {
     
     // iterate through feature vector
     //std::cout << (*dataP)[feature][0];
-    const int max =  *max_element(outcomes.begin(), outcomes.end());
+    const int max =  *std::max_element(outcomes.begin(), outcomes.end());
     //std::cout << "max = "<< max;
     // initialize length as number of classes
     int counts[max + 1];
