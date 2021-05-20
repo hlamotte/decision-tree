@@ -4,8 +4,13 @@ set(ProjectName DecisionTree)
 
 project(${ProjectName} CXX)
 
-set(CMAKE_CXX_STANDARD 11)
+#set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+
+# require C++11
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_compile_options(-O3 -Wall)
 
