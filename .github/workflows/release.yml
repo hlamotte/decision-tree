@@ -14,6 +14,6 @@ jobs:
       run:   |
          sudo apt update && sudo apt install g++
     - name: setup CMake
-      run: mkdir build &&  /usr/local/bin/cmake -S . -B ./build/ -D CMAKE_CXX_COMPILER=/usr/bin/g++ -DCMAKE_VERBOSE_MAKEFILE=ON #/usr/local/bin/x86_64-apple-darwin19-gcc-10.2.0
+      run: mkdir build &&  /usr/local/bin/cmake -S . -B ./build/ -D CMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_VERBOSE_MAKEFILE=ON #/usr/local/bin/x86_64-apple-darwin19-gcc-10.2.0
     - name: run tests
       run: cd build && make && cd test && ./DecisionTests
