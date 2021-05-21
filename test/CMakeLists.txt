@@ -3,9 +3,9 @@ cmake_minimum_required(VERSION 3.20)
 set(ProjectName DecisionTests)
 
 set(Sources
-    #NodeTests.cpp
+    NodeTests.cpp
     CSVReaderTests.cpp
-    #DecisionTreeTests.cpp
+    DecisionTreeTests.cpp
 )
 
 add_executable(${ProjectName} ${Sources})

@@ -21,16 +21,16 @@ enable_testing()
 add_subdirectory(googletest)
 
 set(Headers
-    #Node.hpp
+    Node.hpp
     CSVReader.hpp
-    #DecisionTree.hpp
+    DecisionTree.hpp
 )
 
 set(Source
-    #Node.cpp
+    Node.cpp
     CSVReader.cpp
-    #DecisionTree.cpp
-    #Main.cpp
+    DecisionTree.cpp
+    Main.cpp
 )
 
 add_library(${ProjectName} SHARED ${Source} ${Headers})
