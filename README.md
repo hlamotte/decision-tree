@@ -1,19 +1,29 @@
 # Decision tree in C++
 ## How to compile and run tests locally
-Ensure CMake compilation is installed and correct architecture setup.
+Ensure you have CMake installed.
 
-Run compile command from directory root:
-```bash
-/usr/local/bin/cmake --build ./build --config Debug --target all -j 6 --
+Install CMake on MacOS:
+```
+$ brew install cmake
+$ cmake --version
+```
+
+This project has been successfully compiled using clang++ compiler on MacOS (AppleClang 11.0.3). Ensure you have Clang installed.
+
+Compiling project:
+```
+$ mkdir build
+$ /usr/local/bin/cmake -S . -B ./build/ -D CMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_VERBOSE_MAKEFILE=ON
+$ cd build && make
 ```
 For running tests after successful compilation:
 ```bash
-./build/test/DecisionTests 
+$ cd test && ./DecisionTests && cd ../..
 ```
 ## Using this decision tree classifier
 An example jupyter notebook calling this classifier training on the Titanic dataset can be found [here](notebooks/titanic_predictions.ipynb).
 
-As can be seen in the notebook, the classifier implemented here does not provide identical results to the scikit-learn Decision Tree Classifier.
+As can be seen in the notebook, the classifier implemented here does not produce identical results to the scikit-learn Decision Tree Classifier, but we see 85% accurate results on a test data set compared with the sci-kit learn implementation.
 
 
 ## Overview of this implementation of a decision tree classifier
