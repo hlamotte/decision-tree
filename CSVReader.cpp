@@ -7,12 +7,6 @@ DataFrame CSVReader::read(std::string filePath) {
     std::string line;                    /* string to hold each line */
     DataFrame array;      /* vector of vector<int> for 2d array */
 
-    //if (argc < 2) { /* validate at least 1 argument given */
-    //    cerr << "error: insufficient input.\n"
-    //            "usage: " << argv[0] << " filename\n";
-    //    return 1;
-    //}
-
     std::ifstream f (filePath);   /* open file */
 
     try {
@@ -32,14 +26,5 @@ DataFrame CSVReader::read(std::string filePath) {
         array.push_back (row);          /* add row to array */
     }
     f.close();
-
-    /*
-    std::cout << "complete array\n\n";
-    for (auto& row : array) {           
-        for (auto& val : row)           
-            std::cout << val << "  ";   
-        std::cout << "\n";              
-    }
-    */
     return array;
 }
