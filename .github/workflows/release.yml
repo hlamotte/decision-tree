@@ -5,16 +5,16 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: macos-10.15
     steps:
     - uses: actions/checkout@v2
       with:
         submodules: 'true'
     - name: print compiler packages
       run: ls /usr/local/include/c++ && ls /usr/local/include/c++/10.2.0
-    - name: install compiler
-      run:   |
-         sudo apt update && sudo apt install clang-11 lldb-11 lld-11 && sudo apt-get install libstdc++6
+    #- name: install compiler
+    #  run:   |
+    #     sudo apt update && sudo apt install clang-11 lldb-11 lld-11 && sudo apt-get install libstdc++6
     - name: setup CMake
       run: mkdir build &&  /usr/local/bin/cmake -S . -B ./build/ -D CMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_VERBOSE_MAKEFILE=ON #/usr/local/bin/x86_64-apple-darwin19-gcc-10.2.0
     - name: run tests
