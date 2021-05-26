@@ -12,7 +12,7 @@ jobs:
         submodules: 'true'
     - name: install compiler
       run:   |
-         sudo apt update && sudo apt install g++
+         sudo apt update && sudo apt install clang-11 lldb-11 lld-11
     - name: setup CMake
       run: mkdir build &&  /usr/local/bin/cmake -S . -B ./build/ -D CMAKE_CXX_COMPILER=/usr/bin/clang++ -DCMAKE_VERBOSE_MAKEFILE=ON #/usr/local/bin/x86_64-apple-darwin19-gcc-10.2.0
     - name: run tests
