@@ -10,8 +10,8 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: 'true'
-    - name: print compiler packages
-      run: ls /usr/local/include/c++ && ls /usr/local/include/c++/10.2.0
+    #- name: print compiler packages
+    #  run: ls /usr/local/include/c++ && ls /usr/local/include/c++/10.2.0
     #- name: install compiler
     #  run:   |
     #     sudo apt update && sudo apt install clang-11 lldb-11 lld-11 && sudo apt-get install libstdc++6
